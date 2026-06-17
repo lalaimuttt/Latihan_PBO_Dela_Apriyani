@@ -10,12 +10,12 @@ class TiketVelvet extends Tiket {
 
     // Constructor
     public function __construct($data) {
-        parent::__construct($data); // Panggil constructor parent
+        parent::__construct($data);
         $this->bantalSelimutPack = $data['bantal_selimut_pack'] ?? 'Standard';
         $this->layananButler = $data['layanan_butler'] ?? 'Tidak tersedia';
     }
 
-    // Getter untuk properti tambahan
+    // Getter
     public function getBantalSelimutPack() { 
         return $this->bantalSelimutPack; 
     }
@@ -24,13 +24,13 @@ class TiketVelvet extends Tiket {
         return $this->layananButler; 
     }
 
-    // Implementasi method abstract dari parent (wajib)
+    // ✅ TAHAP 5: OVERRIDE method hitungTotalHarga()
+    // Velvet: Total = (jumlah_kursi * hargaDasarTiket) * 1.50
     public function hitungTotalHarga() {
-        // Nanti diisi di Tahap 5
-        return 0;
+        return ($this->jumlah_kursi * $this->hargaDasarTiket) * 1.50;
     }
 
-    // Implementasi method abstract dari parent (wajib)
+    // Implementasi method abstract
     public function tampilkanInfoFasilitas() {
         return [
             'Bantal Selimut Pack' => $this->bantalSelimutPack,

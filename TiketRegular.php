@@ -10,12 +10,12 @@ class TiketRegular extends Tiket {
 
     // Constructor
     public function __construct($data) {
-        parent::__construct($data); // Panggil constructor parent
+        parent::__construct($data);
         $this->tipeAudio = $data['tipe_audio'] ?? 'Stereo';
         $this->lokasiBaris = $data['lokasi_baris'] ?? 'A1';
     }
 
-    // Getter untuk properti tambahan
+    // Getter
     public function getTipeAudio() { 
         return $this->tipeAudio; 
     }
@@ -24,13 +24,13 @@ class TiketRegular extends Tiket {
         return $this->lokasiBaris; 
     }
 
-    // Implementasi method abstract dari parent (wajib)
+    // ✅ TAHAP 5: OVERRIDE method hitungTotalHarga()
+    // Regular: Total = jumlah_kursi * hargaDasarTiket (tanpa tambahan)
     public function hitungTotalHarga() {
-        // Nanti diisi di Tahap 5
-        return 0;
+        return $this->jumlah_kursi * $this->hargaDasarTiket;
     }
 
-    // Implementasi method abstract dari parent (wajib)
+    // Implementasi method abstract
     public function tampilkanInfoFasilitas() {
         return [
             'Tipe Audio' => $this->tipeAudio,
