@@ -1,5 +1,5 @@
 <?php
-// index.php - TAMPILAN WEB TAHAP 6
+// index.php - TAMPILAN WEB TAHAP 6 //
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
